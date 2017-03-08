@@ -28,10 +28,12 @@ export default function spreader(schema) {
 			...currentState
 		};
 
-		schema.reduce((prevLevel, key, i, arr) => {
+		const length = schema.length - 1;
+
+		schema.reduce((prevLevel, key, i) => {
 			const parsedKey = getParsedKey(key, variableKeys);
 
-			if (i === arr.length - 1) {
+			if (i === length) {
 				prevLevel[parsedKey] = {
 					...linkedState[parsedKey],
 					...vals
