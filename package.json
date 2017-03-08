@@ -1,6 +1,6 @@
 {
   "name": "spreadux",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Easily change values in immutable deep nested object",
   "main": "dist/index.js",
   "scripts": {
