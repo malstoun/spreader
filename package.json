@@ -2,7 +2,7 @@
   "name": "spreadux",
   "version": "0.0.1",
   "description": "Easily change values in immutable deep nested object",
-  "main": "dist/spreadux.js",
+  "main": "dist/index.js",
   "scripts": {
     "production": "babel src -d dist",
     "test": "jest"
