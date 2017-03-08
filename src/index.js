@@ -23,7 +23,7 @@ function getParsedKey(key, variableKeys) {
 	}
 }
 
-export default function spreader(schema) {
+export function spreadux(schema) {
 	return function(currentState, vals, variableKeys) {
 		const nextState = {
 			...currentState

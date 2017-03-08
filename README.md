@@ -1,4 +1,4 @@
-# spreader
+# spreadux
 
 Helps to avoid nightmares like this:
 

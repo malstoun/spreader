@@ -1,0 +1,31 @@
+{
+  "name": "spreadux",
+  "version": "0.0.1",
+  "description": "Easily change values in immutable deep nested object",
+  "main": "dist/spreadux.js",
+  "scripts": {
+    "production": "babel src -d dist",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/malstoun/spreadux.git"
+  },
+  "keywords": [
+    "immutable",
+    "spread",
+    "redux",
+    "flux"
+  ],
+  "author": "Andrey Ratserov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/malstoun/spreadux/issues"
+  },
+  "homepage": "https://github.com/malstoun/spreadux#readme",
+  "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-stage-3": "^6.22.0"
+  }
+}
