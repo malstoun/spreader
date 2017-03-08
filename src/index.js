@@ -9,8 +9,13 @@ function getParsedKey(key, variableKeys) {
 		if (typeof variableKeys === 'string' ||
 			typeof variableKeys === 'number'
 		) {
-			return ''+variableKeys
+			return variableKeys.toString()
 		} else {
+			if (variableKeys[match[1]] !== undefined) {
+				return variableKeys[match[1]]
+			} else {
+				throw Error(`There is no replacement for ${match[1]} in variableKeys. Check the third argument.`)
+			}
 			return variableKeys[match[1]]
 		}
 	} else {
