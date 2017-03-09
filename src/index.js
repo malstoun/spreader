@@ -3,23 +3,23 @@ function getParsedKey(key, variableKeys) {
 		return key;
 	}
 
-	const match = key.match(/^\[(.+)\]$/)
+	const match = key.match(/^\[(.+)\]$/);
 
 	if (match && match[1]) {
 		if (typeof variableKeys === 'string' ||
 			typeof variableKeys === 'number'
 		) {
-			return variableKeys.toString()
-		} else {
-			if (variableKeys[match[1]] !== undefined) {
-				return variableKeys[match[1]]
-			} else {
-				throw Error(`There is no replacement for ${match[1]} in variableKeys. Check the third argument.`)
-			}
+			return variableKeys.toString();
 		}
-	} else {
-		return key
+
+		if (variableKeys[match[1]] !== undefined) {
+			return variableKeys[match[1]];
+		}
+
+		throw Error(`There is no replacement for ${match[1]} in variableKeys. Check the third argument.`);
 	}
+
+	return key;
 }
 
 export function spreadux(schema) {
@@ -42,12 +42,13 @@ export function spreadux(schema) {
 					...linkedState[parsedKey],
 					...vals
 				};
-			} else {
-				prevLevel[parsedKey] = {
-					...linkedState[parsedKey]
-				};
-				linkedState = prevLevel[parsedKey];
+
+				return prevLevel[parsedKey]
 			}
+
+			linkedState = prevLevel[parsedKey] = {
+				...linkedState[parsedKey]
+			};
 
 			return prevLevel[parsedKey];
 		}, nextState);
