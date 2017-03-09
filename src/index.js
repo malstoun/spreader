@@ -16,7 +16,6 @@ function getParsedKey(key, variableKeys) {
 			} else {
 				throw Error(`There is no replacement for ${match[1]} in variableKeys. Check the third argument.`)
 			}
-			return variableKeys[match[1]]
 		}
 	} else {
 		return key
