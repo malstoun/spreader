@@ -23,6 +23,9 @@ function getParsedKey(key, variableKeys) {
 }
 
 export function spreadux(schema) {
+	if (!Array.isArray(schema)) {
+		throw TypeError(`Schema must be an array. Received ${typeof schema}`);
+	}
 	return function(currentState, vals, variableKeys) {
 		const nextState = {
 			...currentState

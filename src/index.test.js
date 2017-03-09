@@ -1,10 +1,6 @@
 import { spreadux } from './index';
 
 describe('all', () => {
-	test('should return function', () => {
-		expect(typeof spreadux([])).toBe('function');
-	});
-
 	let state = null;
 
 	beforeEach(() => {
@@ -25,6 +21,14 @@ describe('all', () => {
 	afterEach(() => {
 		state = null;
 	});
+
+	test('should return function', () => {
+		expect(typeof spreadux([])).toBe('function');
+	});
+
+	test('throw if schema isn\'t an array', () => {
+		expect(() => spreadux()).toThrow();
+	})
 
 	test('state object doesn\'t mutate', () => {
 		const subjectSpread = spreadux(['entities', 'servers', 'test']);
