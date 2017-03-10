@@ -38,7 +38,7 @@ const state = {
 We want easily change any fields in any subject. So, `spread helper` will be:
 
 ```javascript
-const subjectSpread = spreader(['entities', 'subjects', '[id]']);
+const subjectSpread = spreadux(['entities', 'subjects', '[id]']);
 ```
 
 Now, we can apply that helper to our normalized data:
