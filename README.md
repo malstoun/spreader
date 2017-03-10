@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/malstoun/spreadux.svg?branch=master)](https://travis-ci.org/malstoun/spreadux)
+
+
 # spreadux
 
 Helps to avoid nightmares like this:
