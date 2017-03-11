@@ -41,10 +41,24 @@ export function spreadux(schema) {
 			const parsedKey = getParsedKey(key, variableKeys);
 
 			if (i === length) {
-				prevLevel[parsedKey] = {
-					...linkedState[parsedKey],
-					...vals
-				};
+				if (Array.isArray(linkedState[parsedKey])) {
+					if (Array.isArray(vals)) {
+						prevLevel[parsedKey] = [
+							...linkedState[parsedKey],
+							...vals
+						]
+					} else {
+						prevLevel[parsedKey] = [
+							...linkedState[parsedKey],
+							vals
+						];
+					}
+				} else {
+					prevLevel[parsedKey] = {
+						...linkedState[parsedKey],
+						...vals
+					};
+				}
 
 				return prevLevel[parsedKey]
 			}

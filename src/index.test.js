@@ -38,7 +38,17 @@ describe('all', () => {
 		expect(state.entities.servers.test.build).toBe('dev');
 	});
 
-	test('work with arrays');
+	test('push object to an arrays', () => {
+		const subjectSpread = spreadux(['result', 'data']);
+
+		expect(subjectSpread(state, { build: 'prod' }).result.data.slice(-1)[0].build).toBe('prod');
+	});
+
+	test('merge two arrays', () => {
+		const subjectSpread = spreadux(['result', 'data']);
+
+		expect(subjectSpread(state, [31, 28]).result.data.slice(-1)[0]).toBe(28);
+	})
 });
 
 describe('plain vars', () => {
