@@ -48,6 +48,8 @@ Now, we can apply that helper to our normalized data:
 
 ```javascript
 const newState = subjectSpread(state, { isActive: false }, 1);
+// same
+// const newState = subjectSpread(state, { isActive: false }, { id: 1 });
 ```
 
 Result:
